@@ -9,7 +9,7 @@ import seaborn as sns
 
 # Load the dataset
 df = pd.read_csv(r"C:\Users\abhin\OneDrive\Desktop\Prodigy infotech\task 1\API_SP.POP.1564.TO_DS2_en_csv_v2_18948.csv", skiprows=4)
-#print(df.head())
+print(df.head())
 
 # Selecting relevant columns and removing null values
 Year = '2020'
@@ -19,14 +19,14 @@ df_new[Year] = pd.to_numeric(df_new[Year], errors = "coerce")
 df_top10 = df_new.nlargest(10, Year)
 
 # Create bar chart
-'''plt.figure(figsize =(12,6))
+plt.figure(figsize =(12,6))
 plt.bar(df_top10['Country Name'], df_top10[Year], color = 'Red', label = '15-64 years')
 plt.xlabel('Country')
 plt.ylabel('Percentage')
 plt.title(f'Distribution of 15-64 Age Group in Top 10 Countries ({Year})')
 plt.xticks(rotation=90)
 plt.show()
-plt.savefig("barchart.png")'''
+plt.savefig("barchart.png")
 
 # Create a histogram
 plt.figure(figsize = (12,6))
